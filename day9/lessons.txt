@@ -1,0 +1,19 @@
+# On what I did  by myself:
+- this puzzle is a nice sandbox memory management/ compression decompression challenge.
+- when traversing data, while(data[i]==cond){i--;} very useful pattern to scroll through and get the index i where cond is not met anymore
+- since I used many global variables, the main() function ended up serving not much point. the functions are called without argument, and it is not sure what each one is really doing
+- at the same time, I did save on having to pass everything as reference
+- on the smaller functions, sometimes I passed the return values as both arguments and return value, and on the calling of the function there is nothing indicating the passed variables will be altered. in this case, it would be best to use a return structure.
+
+
+# claude suggestions
+- many places where infinite loops could happen - did not worry much on it, but on production code it is very important
+- I used a physical memory bubble-sort kind of solution, where a data structure linked list would have been a smarter pattern
+- memory/disk defrag is a classic interview top
+LESSON: sometimes modeling the LOGIC of the problem > modeling the PHYSICAL reality of it
+
+# proh14 analysis https://github.com/proh14/adventofcode2024/
+- the approach was very similar, but he had simples functions that did the job. his solution was cleaner in general
+
+# paige analysis https://github.com/PaigePalisade/AdventOfCode2024
+- paige used the smartes approach - used a double linked list and a smart node structure to save the disk data. so very easily without having to deal with a long array he was able to do operations on this disk.

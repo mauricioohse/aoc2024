@@ -1,0 +1,16 @@
+# On what I did  by myself:
+- had good separation of logics in separated functions that helped making day 2
+- used base 2 and base 3 numbers to generate all possibilities of n^base array
+- had done a poor job using itoa() and atoll() to do the string cat. had to  change to use int sum
+- was right on my suspicion that the mistake I was doing was in the cat
+
+# claude suggestions
+- strtep() instead of strtok() - it doesnt modify the fields in the input string (although it does move the pointer around)
+- variable name: stay consistent with abbreviating or note. using nums for numbers and nums_cnt for the counter.
+- dynamic programming approach: have a table with all the different possible values achieved. in each iteration, add the new possible values for the last values. very memory intensive, but you can quickly test only steps that matter (never test values greater than result, for example) Also, you dont keep repeating doing the same calculations over and over again.
+
+# proh14 analysis https://github.com/proh14/adventofcode2024/
+- he used a recursive approach. very smart. in problems where I need to explore a full space of solutions, seems smart
+
+# paige analysis https://github.com/PaigePalisade/AdventOfCode2024
+- same as proh14

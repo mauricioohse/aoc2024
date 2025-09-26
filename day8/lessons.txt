@@ -1,0 +1,23 @@
+# On what I did  by myself:
+- again nice separation in small functions that facilitated part2
+- separating par1 and part2 files really helped
+- some functions sigatures are really long - needing to pass map and its size for both antinode and normal map was bad
+
+# claude suggestions
+- didnt like any of the suggestions given
+
+# proh14 analysis https://github.com/proh14/adventofcode2024/
+- he used global antenna_size and antinode_size and content[] variables, which made life much easier
+- I used only the antennas as a specific data structure, he used both antennas and antinode. which makes total sense. the way I did antinode map is more complicated.
+- but his antinode find funcion is much less efficient then the way I used to map. so there are pros and cons.
+
+# paige analysis https://github.com/PaigePalisade/AdventOfCode2024
+- paige on the other hand did not use functions at all, just rawdogged the complicated
+- he used a frequencyTable for the antennas which mapped directly the ASCII value. very cool! similar to a hashmap/dictionary using the ascii as the key
+- he also, as did proh14, used the SIZE to be the same as the data input. save some time checking input size, but the code might not work properly for the test input
+
+# gorbit https://github.com/gorbit99/AOC2024
+- used separated functions for clarifying
+- more prolix code
+- used utils vector in C, which is interesting
+- passed everything by reference, no globals

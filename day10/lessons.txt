@@ -1,0 +1,12 @@
+# On what I did by myself:
+- had big trouble with using an array as matrix =(
+- made mistake on index validation, since in C the "arr_size" is not a valid index (it only goes from 0 to size-1)
+- made a very clean way to get the input: just read char by char, put on the array, since it is a square matrix just get the size by sqrt() of the array size.
+- initially had done a big map to save all data of the visited peaks (100x100x500 bytes). was not needed to keep all of them
+- had to write two functions to print array. maybe it would be easier to use dynamic array that are more generic.
+
+# claude suggestions
+
+# proh14 analysis https://github.com/proh14/adventofcode2024/
+
+# paige analysis https://github.com/PaigePalisade/AdventOfCode2024
