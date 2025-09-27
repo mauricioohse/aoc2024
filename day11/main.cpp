@@ -2,6 +2,7 @@
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 #pragma GCC diagnostic ignored "-Wunused-parameter" 
 
@@ -15,9 +16,9 @@ int content_count = 0;
 
 struct HashEntry
 {
-    long long int key;
-    long long int hash;
-    long long int value;
+    int64_t key;
+    int64_t hash;
+    int64_t value;
     HashEntry *next;
 };
 
@@ -30,15 +31,15 @@ struct HashMap
 
 HashMap *MAP;
 
-long long int hashkey(long long int key)
+int64_t hashkey(int64_t key)
 {
     return (key%HASH_MAP_SIZE +1);
 }
 
-long long int hash_append(long long int key, long long int value, HashMap * map)
+int64_t hash_append(int64_t key, int64_t value, HashMap * map)
 {
     // return 0 on success, 1 in case entry was already found
-    long long int hash = hashkey(key);
+    int64_t hash = hashkey(key);
 
     HashEntry *entry = &map->entries[hash];
     // assume hashmap was initialized with nullptr in last hash_entry
@@ -67,10 +68,10 @@ long long int hash_append(long long int key, long long int value, HashMap * map)
 
 #define HASHMAP_NO_VALUE_FOR_KEY -9999
 
-long long int hashmap_getvalue_from_key(long long int key, HashMap *map)
+int64_t hashmap_getvalue_from_key(int64_t key, HashMap *map)
 {
     // returns -9999 in case it doesnt find key in hashmap
-    long long int hash = hashkey(key);
+    int64_t hash = hashkey(key);
 
     HashEntry *entry = &map->entries[hash];
 
@@ -101,11 +102,11 @@ void print_arr(char *arr, int arr_size)
 #define MAX_ARRAY 10000000
 struct Array
 {
-    long long int items[MAX_ARRAY];
+    int64_t items[MAX_ARRAY];
     int count;
 } numbers;
 
-int count_digits(long long int number)
+int count_digits(int64_t number)
 {
     int count = 0;
     while(number!=0)
@@ -116,10 +117,10 @@ int count_digits(long long int number)
     return count;
 }
 
-long long int left_half(long long int number)
+int64_t left_half(int64_t number)
 {
-    long long int possible_result = hashmap_getvalue_from_key(number, MAP);
-    long long int left = number;
+    int64_t possible_result = hashmap_getvalue_from_key(number, MAP);
+    int64_t left = number;
     if (possible_result !=  HASHMAP_NO_VALUE_FOR_KEY) return possible_result;
 
     int count = count_digits(number);
@@ -131,9 +132,9 @@ long long int left_half(long long int number)
     return left;
 }
 
-long long int right_half(long long int number)
+int64_t right_half(int64_t number)
 {
-    long long int result = number - left_half(number)*(pow(10, count_digits(number)/2));
+    int64_t result = number - left_half(number)*(pow(10, count_digits(number)/2));
     return result;
 }
 
@@ -194,7 +195,7 @@ int main()
     for(int it =0; it < 75; it++)
     {
         // main interation loop
-        for (long long int i = 0; i < numbers.count; i++)
+        for (int64_t i = 0; i < numbers.count; i++)
         {
             // for each member...
             if (numbers.items[i] == 0)
@@ -204,7 +205,7 @@ int main()
             }
             else if(count_digits(numbers.items[i])%2 == 0)
             {
-                long long int number = numbers.items[i];
+                int64_t number = numbers.items[i];
                 numbers.items[i] = right_half(number);
                 arr_insert(&numbers, left_half(number),i);
                 i++;
