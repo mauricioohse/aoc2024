@@ -1,5 +1,9 @@
 # On what I did  by myself:
-
+- on the first part, did a brute force, which was ok but not great
+- encountered memory issues because I tried instatiating a 8mb array everytime the function was called to do a append in an array, instead, shouldve used in-place substitution with just one copy var
+- on part2 realized I needed to cache the results of each iteration, but that was not enough
+- after looking proh14 solution finally realized that I needed to save the number of stones resulting from the pair number+blinks, and not the left/right part operation
+- also had to understand to use a depth-first recursive solution.
 
 # claude suggestions
 
