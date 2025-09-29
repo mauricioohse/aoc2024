@@ -1,0 +1,20 @@
+# On what I did  by myself:
+- Was able to oneshot both part 1 and part 2!
+- part 2 required a somewhat elegant logic (the clockwise edge checking). It was a bit complicated, but efficient.
+- I used DFS for mapping the regions, it was very natural
+- possibly an approach where I stored the edges of each region - struct edges{bool up,down,left,right} could be clearer, but less memory and speed efficient
+- i had issues of confusing x/y and col/row notation. since I am using C and not doing any math, I should 100% keep with row and col instead of x/y.
+- I used globals to get DFS data (area and perimeter). probably would be best to have a struct dfs_accumulators with that data.
+
+# claude suggestions
+
+
+# proh14 analysis https://github.com/proh14/adventofcode2024/
+- proh14 used a struct edge {row,col,dirx,diry} approach
+- also used a visited array as I did
+- he put the visited in the isValid() function directly
+- for the side part, instead of doing the clockwise logic, he stored all the edges in a list, and he performed a second DFS in the edge list for each DFS iteration (cleaning and building the edge list each time).
+- the logic was cleaner, but looks like it would be slower a bit
+- actually both solutions as O2 optimization were very similar
+
+# paige analysis https://github.com/PaigePalisade/AdventOfCode2024
