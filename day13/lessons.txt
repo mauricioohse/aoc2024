@@ -1,0 +1,14 @@
+# On what I did  by myself:
+- Initially I did a very obtuse and complex way that actually solved the problem correctly!
+- I spent A LOT of time not realizing I had an input reading issue. The way I read the input initially was very bad and depended on the input having a specific type, which was different for the last item
+- besides that, taking a pen and paper made the problem much easier than trying to think with excalidraw, sadly.
+- the idea of solving by multiplying the cost to see if it would become integer was plainly logically wrong and I didnt even realize =(
+- solution used: plain old algebra, ceil(A)!=A to detect if double is an int.
+
+# claude suggestions
+
+
+# proh14 analysis https://github.com/proh14/adventofcode2024/
+- proh14 readFile() function is a masterclass on simplicity: he reads 3 lines from the file, puts on the equations, advance one char (next line) and that is it.
+
+# paige analysis https://github.com/PaigePalisade/AdventOfCode2024
