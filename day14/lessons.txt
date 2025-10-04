@@ -1,0 +1,16 @@
+# On what I did  by myself:
+- had minor issues while implementing:
+    - on part 1, lost a lot of time because of +1 errors.
+    - on part 2, lost a bit of time because I wrongly iterated the map without changing it xd
+- how to solve: 
+    - part1: just did an equation on the speed*100 and mod to get the position. then an if to set the final post in each quadrant.
+    - part2: I ended up doing a DFS to see neighbouring robots and assumed that the iteration with most robot side-by-side would be the tree. I was right!
+
+# claude suggestions
+
+
+# proh14 analysis https://github.com/proh14/adventofcode2024/
+- proh14 used WIDTH and HEIGHT directly instead of MAX_J and MAX_Y. it actually made it much much simpler =( 
+        a good lesson there: if possible, just use the count/size always. then if you always use count and size, you will get used to just checking until < instead of equal.
+        
+# paige analysis https://github.com/PaigePalisade/AdventOfCode2024
