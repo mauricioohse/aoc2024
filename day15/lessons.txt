@@ -1,10 +1,25 @@
 # On what I did  by myself:
+- had a terrible terrible time trying to use only DFS and recursion
+- the issue is that it was impossible to make the check on all possible places before splitting the func calls on two wide boxes
+- this meant that my dfs-only approach was impossible, it always required a stack
+- I had realized that having a stack would probably be the best solution but I also thought doing dfs-only would be possible and wanted to train that
+- anyway the important thing is that I was able to solve in the end.
+- another thing: I did have some fun fiddling on how to visualize if my algo was correct. found some neat stuff about printing in terminal colors and such.
+
+Approach:
+    - every move, dfs to check all the boxes that would be pushed. built a stack of all those boxes. 
+      only pushed if the dfs finished without encountering unmovable boxes. also had to sort the 
+      stack before doing the movement swap due to ordering.
+    > DFS + stack + sorting the stack
+
 
 
 # claude suggestions
 
 
 # proh14 analysis https://github.com/proh14/adventofcode2024/
-
+- I ended up needing to go the same approach as proh14
+- he didnt keep the map in the second part, also he consumed the map and created the wide map directly, instead of doing the map and then create wide map.
+- he did have a stuct with row, col and char for some reason...
 
 # paige analysis https://github.com/PaigePalisade/AdventOfCode2024
